@@ -104,13 +104,13 @@ button { font-family: inherit; cursor: pointer; }
   text-transform: uppercase;
 }
 .btn-primary {
-  background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+  background: #38B6FF;
   color: #ffffff;
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 8px 32px rgba(56, 182, 255, 0.35);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 44px rgba(59, 130, 246, 0.55);
+  box-shadow: 0 12px 44px rgba(56, 182, 255, 0.55);
   filter: brightness(1.1);
 }
 .section-apply-cta {
