@@ -113,6 +113,14 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 12px 44px rgba(59, 130, 246, 0.55);
   filter: brightness(1.1);
 }
+.section-apply-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.section-apply-cta .btn-primary {
+  text-decoration: none;
+}
 .btn-platform {
   background: #0c1220;
   color: #ffffff;
