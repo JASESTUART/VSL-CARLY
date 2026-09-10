@@ -120,6 +120,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 .section-apply-cta .btn-primary {
   text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
 }
 .btn-platform {
   background: #0c1220;
