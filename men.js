@@ -16,12 +16,14 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // ============ Navbar scrolled state ============
 const navbar = document.querySelector('.navbar');
-const onScroll = () => {
-  if (window.scrollY > 60) navbar.classList.add('scrolled');
-  else navbar.classList.remove('scrolled');
-};
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+if (navbar) {
+  const onScroll = () => {
+    if (window.scrollY > 60) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
 // ============ Reveal-on-scroll for sections ============
 const revealEls = document.querySelectorAll('.section, .hero');
