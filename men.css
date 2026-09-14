@@ -757,6 +757,14 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 14px;
   letter-spacing: 0.05em;
 }
+.disclaimer {
+  color: #475569;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  max-width: 640px;
+  margin: 8px auto 0;
+}
 
 /* ============ APPLICATION ============ */
 .application {
