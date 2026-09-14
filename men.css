@@ -762,9 +762,12 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 12px;
   letter-spacing: 0.02em;
   text-align: center;
-  max-width: 640px;
+  max-width: 840px;
+  line-height: 1.6;
   margin: 8px auto 0;
 }
+.disclaimer a { color: #64748b; text-decoration: underline; }
+.disclaimer a:hover { color: #94a3b8; }
 
 /* ============ APPLICATION ============ */
 .application {
