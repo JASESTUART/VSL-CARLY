@@ -1227,6 +1227,7 @@ button { font-family: inherit; cursor: pointer; }
   color: #ffffff;
   margin: 14px 0 0;
 }
+.vt-grid-4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 980px) {
   .vt-grid { grid-template-columns: repeat(2, 1fr); }
 }
