@@ -937,7 +937,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============ FEATURED QUOTE ============ */
 .featured-quote {
-  padding: 64px 0;
+  padding: 28px 0;
   text-align: center;
   background: rgba(59, 130, 246, 0.05);
   border-top: 1px solid rgba(59, 130, 246, 0.12);
