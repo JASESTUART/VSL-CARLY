@@ -1578,7 +1578,7 @@ button { font-family: inherit; cursor: pointer; }
 .apply-modal__panel {
   position: relative;
   width: min(720px, 98vw);
-  height: min(92vh, 800px);
+  height: min(78vh, 700px);
   display: flex;
   flex-direction: column;
   background: #05070d;
