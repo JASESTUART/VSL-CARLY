@@ -1577,61 +1577,62 @@ button { font-family: inherit; cursor: pointer; }
 }
 .apply-modal__panel {
   position: relative;
-  width: min(1000px, 94vw);
-  height: min(92vh, 900px);
+  width: min(720px, 92vw);
+  height: min(90vh, 800px);
   display: flex;
   flex-direction: column;
   background: #05070d;
   border: 1px solid rgba(59, 130, 246, 0.25);
-  border-radius: 16px;
-  overflow: hidden;
+  border-radius: 20px;
+  overflow: visible;
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.9);
 }
 .apply-modal__bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 12px 10px 16px;
-  background: #0a0f1c;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.16);
+  justify-content: center;
   flex: 0 0 auto;
-  position: relative;
-  z-index: 2;
 }
 .apply-modal__newtab {
-  font-size: 13px;
-  color: #38B6FF;
+  font-size: 12px;
+  color: #64748b;
   font-weight: 600;
   text-decoration: none;
+  padding: 6px 0 2px;
 }
-.apply-modal__newtab:hover { text-decoration: underline; }
+.apply-modal__newtab:hover { color: #94a3b8; text-decoration: underline; }
 .apply-modal__close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
   width: 40px;
   height: 40px;
   flex: 0 0 auto;
   border-radius: 50%;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   background: #ffffff;
   color: #05070d;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
   transition: background .2s ease, transform .2s ease;
+  z-index: 5;
 }
 .apply-modal__close:hover { background: #38B6FF; color: #ffffff; transform: scale(1.06); }
-.apply-modal__body { flex: 1 1 auto; min-height: 0; }
+.apply-modal__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
 .apply-modal__body iframe {
   width: 100%;
   height: 100%;
   border: 0;
   display: block;
-  background: #05070d;
-}
-@media (max-width: 720px) {
-  .apply-modal__panel { width: 100vw; height: 100vh; border: 0; border-radius: 0; }
+  background: #ffffff;
 }
 
 /* ============ WHY section — reframe line under the cards ============ */
