@@ -501,7 +501,7 @@
         <button class="apply-modal__close" type="button" data-apply-close aria-label="Close">✕</button>
       </div>
       <div class="apply-modal__body">
-        <iframe id="applyFrame" title="Better Body Academy application" src="about:blank" data-src="https://api.leadconnectorhq.com/widget/survey/FqmULHqIsLIkApSkM2li" allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment" loading="lazy"></iframe>
+        <iframe id="applyFrame" title="Better Body Academy application" src="about:blank" data-src="https://api.leadconnectorhq.com/widget/survey/FqmULHqIsLIkApSkM2li" allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
       </div>
     </div>
   </div>
@@ -628,9 +628,13 @@
       var modal = document.getElementById('applyModal');
       var frame = document.getElementById('applyFrame');
       var loaded = false;
+      function preload() {
+        if (!loaded) { frame.src = frame.getAttribute('data-src'); loaded = true; }
+      }
+      preload(); // start loading the survey immediately so it's ready before the modal is ever opened
       function openApply(e) {
         if (e) e.preventDefault();
-        if (!loaded) { frame.src = frame.getAttribute('data-src'); loaded = true; }
+        preload();
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
