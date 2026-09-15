@@ -1577,7 +1577,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .apply-modal__panel {
   position: relative;
-  width: min(720px, 100vw);
+  width: min(720px, calc(100vw - 48px));
   height: min(78vh, 700px);
   display: flex;
   flex-direction: column;
@@ -1589,8 +1589,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 .apply-modal__close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: -16px;
+  right: -16px;
   width: 40px;
   height: 40px;
   flex: 0 0 auto;
