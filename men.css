@@ -1595,14 +1595,15 @@ button { font-family: inherit; cursor: pointer; }
   height: 40px;
   flex: 0 0 auto;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: #ffffff;
-  color: #05070d;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(5, 7, 13, 0.92);
+  color: #ffffff;
+  opacity: 1;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
   transition: background .2s ease, transform .2s ease;
   z-index: 5;
 }
