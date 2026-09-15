@@ -1596,6 +1596,8 @@ button { font-family: inherit; cursor: pointer; }
   background: #0a0f1c;
   border-bottom: 1px solid rgba(59, 130, 246, 0.16);
   flex: 0 0 auto;
+  position: relative;
+  z-index: 2;
 }
 .apply-modal__newtab {
   font-size: 13px;
@@ -1605,18 +1607,21 @@ button { font-family: inherit; cursor: pointer; }
 }
 .apply-modal__newtab:hover { text-decoration: underline; }
 .apply-modal__close {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.05);
-  color: #e8edf5;
-  font-size: 15px;
+  border: none;
+  background: #ffffff;
+  color: #05070d;
+  font-size: 18px;
+  font-weight: 700;
   line-height: 1;
   cursor: pointer;
-  transition: background .2s ease, border-color .2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  transition: background .2s ease, transform .2s ease;
 }
-.apply-modal__close:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(56, 182, 255, 0.5); }
+.apply-modal__close:hover { background: #38B6FF; color: #ffffff; transform: scale(1.06); }
 .apply-modal__body { flex: 1 1 auto; min-height: 0; }
 .apply-modal__body iframe {
   width: 100%;
