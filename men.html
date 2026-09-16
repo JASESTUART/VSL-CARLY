@@ -23,7 +23,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="men.css?v=68" />
+  <link rel="stylesheet" href="men.css?v=69" />
   <style>
     @keyframes orb-float {
 
@@ -55,10 +55,17 @@
     }
     @media (max-width: 720px) {
       /* compress hero so navbar + titles + video fit on the first screen */
-      .hero-coming-soon { padding-top: 28px; padding-bottom: 24px; padding-left: 10px; padding-right: 10px; }
+      .hero-coming-soon { padding-top: 28px; padding-bottom: 24px; padding-left: 16px; padding-right: 16px; }
       .hero-coming-soon h1 { margin-bottom: 14px !important; }
       .hero-sub { margin-bottom: 22px !important; }
       .hero-sub span + span { margin-top: 14px !important; }
+      /* bleed the video card edge-to-edge, independent of the hero's text padding */
+      .hero-video-card {
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        margin-right: -16px;
+        border-radius: 0;
+      }
     }
 
     @keyframes beam-spin {
@@ -147,7 +154,7 @@
         <span style="display:block">Watch this video for all the details, then schedule a call on the next page</span>
       </p>
 
-      <div class="relative mx-auto max-w-3xl mb-10 rounded-2xl overflow-hidden ring-1 ring-[#38B6FF]/30 shadow-[0_20px_60px_-20px_rgba(56,182,255,0.4)]">
+      <div class="hero-video-card relative mx-auto max-w-3xl mb-10 rounded-2xl overflow-hidden ring-1 ring-[#38B6FF]/30 shadow-[0_20px_60px_-20px_rgba(56,182,255,0.4)]">
         <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
           <iframe src="https://www.loom.com/embed/3a9810ba43a5487786c3cb135f7eda79?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
             title="Better Body Academy video"
