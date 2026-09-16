@@ -23,7 +23,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="men.css?v=72" />
+  <link rel="stylesheet" href="men.css?v=73" />
   <style>
     @keyframes orb-float {
 
@@ -633,17 +633,52 @@
         if (!loaded) { frame.src = frame.getAttribute('data-src'); loaded = true; }
       }
       preload(); // start loading the survey immediately so it's ready before the modal is ever opened
-      function openApply(e) {
-        if (e) e.preventDefault();
-        preload();
+
+      function isEmbedded() {
+        try { return window.self !== window.top; } catch (e) { return true; }
+      }
+
+      // When embedded, the parent page resizes this iframe to the full page
+      // height and does the scrolling itself (see bbaFrameHeight above), so
+      // this document never scrolls internally. That means CSS `position:
+      // fixed` centers the modal within the iframe's whole (tall) height
+      // instead of whatever part of the page is currently on screen. Ask the
+      // parent which local Y-range is actually visible right now and pin the
+      // modal to that instead.
+      function showModal() {
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+      }
+      function openApply(e) {
+        if (e) e.preventDefault();
+        preload();
+        if (!isEmbedded()) { showModal(); return; }
+        var done = false;
+        function onViewport(ev) {
+          if (!ev.data || !ev.data.bbaViewport) return;
+          done = true;
+          window.removeEventListener('message', onViewport);
+          modal.style.position = 'absolute';
+          modal.style.top = ev.data.bbaViewport.localVisibleTop + 'px';
+          modal.style.height = ev.data.bbaViewport.localVisibleHeight + 'px';
+          modal.style.bottom = 'auto';
+          showModal();
+        }
+        window.addEventListener('message', onViewport);
+        window.parent.postMessage('bbaRequestViewport', '*');
+        setTimeout(function () {
+          if (!done) { window.removeEventListener('message', onViewport); showModal(); }
+        }, 200); // fallback: show anyway (falls back to fixed/full-height centering)
       }
       function closeApply() {
         modal.classList.remove('is-open');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        modal.style.position = '';
+        modal.style.top = '';
+        modal.style.height = '';
+        modal.style.bottom = '';
       }
       // Every "Apply Now" / "Apply for coaching" button opens the modal
       document.querySelectorAll('.apply-blue').forEach(function (el) {
