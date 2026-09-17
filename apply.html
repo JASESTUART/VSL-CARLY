@@ -64,9 +64,6 @@
       border: 0;
       overflow-y: auto;
     }
-    @media (min-width: 900px) {
-      iframe { max-width: 760px; }
-    }
   </style>
 </head>
 
@@ -80,22 +77,6 @@
   <iframe id="bba-survey" src="https://api.leadconnectorhq.com/widget/survey/XgvZ0aGeazDlYTpp8CQB"
     title="Better Body Academy application"
     allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
-
-  <div id="bba-debug-badge" style="position:fixed;bottom:6px;left:6px;z-index:9999;background:rgba(0,0,0,0.75);color:#38B6FF;font-size:11px;font-family:monospace;padding:5px 8px;border-radius:4px;pointer-events:none;"></div>
-  <script>
-    (function () {
-      var badge = document.getElementById('bba-debug-badge');
-      var f = document.getElementById('bba-survey');
-      function update() {
-        var r = f.getBoundingClientRect();
-        badge.textContent = 'page width: ' + window.innerWidth + 'px | iframe width: ' + Math.round(r.width) + 'px';
-      }
-      update();
-      window.addEventListener('resize', update);
-      setTimeout(update, 500);
-      setTimeout(update, 1500);
-    })();
-  </script>
 
   <script>
     // Report this page's height to a parent frame so the GHL embed can auto-resize.
@@ -113,7 +94,7 @@
         var children = document.body.children;
         var maxBottom = 0;
         for (var i = 0; i < children.length; i++) {
-          if (children[i].tagName === 'SCRIPT' || children[i].id === 'bba-debug-badge') continue;
+          if (children[i].tagName === 'SCRIPT') continue;
           var bottom = children[i].getBoundingClientRect().bottom;
           if (bottom > maxBottom) maxBottom = bottom;
         }
