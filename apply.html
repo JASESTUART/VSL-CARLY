@@ -18,6 +18,7 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
+      min-height: 100vh;
     }
     body {
       background:
@@ -114,7 +115,11 @@
           if (bottom > maxBottom) maxBottom = bottom;
         }
         var paddingBottom = parseFloat(getComputedStyle(document.body).paddingBottom) || 0;
-        var h = Math.ceil(maxBottom + paddingBottom);
+        var contentHeight = Math.ceil(maxBottom + paddingBottom);
+        // Never report shorter than the visitor's own screen, so our dark
+        // background always reaches the bottom of the viewport instead of
+        // exposing whatever's behind/below the outer page once it's shorter.
+        var h = Math.max(contentHeight, window.innerHeight);
         if (h && h !== last) { last = h; window.parent.postMessage({ bbaFrameHeight: h }, '*'); }
       }
       window.addEventListener('load', postHeight);
