@@ -95,20 +95,32 @@
 
   <script>
     // Report this page's height to a parent frame so the GHL embed can auto-resize.
+    //
+    // NOTE: document.documentElement.scrollHeight is floored at the current
+    // viewport height (i.e. the outer iframe's CURRENT box size) even when the
+    // real content is much shorter - so once the outer frame starts tall, it
+    // can never be told to shrink via scrollHeight. Measure the real bottom
+    // edge of the content instead, via getBoundingClientRect, which reflects
+    // actual layout regardless of how tall the iframe box currently is.
     (function () {
       if (window.parent === window) return;
       var last = 0;
       function postHeight() {
-        var h = Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight
-        );
+        var children = document.body.children;
+        var maxBottom = 0;
+        for (var i = 0; i < children.length; i++) {
+          if (children[i].tagName === 'SCRIPT') continue;
+          var bottom = children[i].getBoundingClientRect().bottom;
+          if (bottom > maxBottom) maxBottom = bottom;
+        }
+        var paddingBottom = parseFloat(getComputedStyle(document.body).paddingBottom) || 0;
+        var h = Math.ceil(maxBottom + paddingBottom);
         if (h && h !== last) { last = h; window.parent.postMessage({ bbaFrameHeight: h }, '*'); }
       }
       window.addEventListener('load', postHeight);
       window.addEventListener('resize', postHeight);
-      if (window.ResizeObserver) { try { new ResizeObserver(postHeight).observe(document.documentElement); } catch (e) {} }
-      [200, 600, 1200, 2500].forEach(function (t) { setTimeout(postHeight, t); });
+      if (window.ResizeObserver) { try { new ResizeObserver(postHeight).observe(document.body); } catch (e) {} }
+      [200, 600, 1200, 2500, 4000].forEach(function (t) { setTimeout(postHeight, t); });
       window.addEventListener('message', function (e) { if (e.data === 'bbaRequestHeight') postHeight(); });
     })();
   </script>
