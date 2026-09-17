@@ -58,8 +58,13 @@
       display: block;
       width: 100%;
       max-width: 500px;
-      height: 400px;
+      height: 280px;
       border: 0;
+      background: #ffffff;
+      border-radius: 8px;
+    }
+    @media (max-width: 640px) {
+      iframe { height: 260px; }
     }
   </style>
 </head>
@@ -74,7 +79,6 @@
   <iframe id="bba-survey" src="https://api.leadconnectorhq.com/widget/survey/XgvZ0aGeazDlYTpp8CQB"
     title="Better Body Academy application"
     allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
   <script>
     // Report this page's height to a parent frame so the GHL embed can auto-resize.
