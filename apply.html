@@ -30,10 +30,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 48px 24px 64px;
+      padding: 48px 24px 24px;
     }
     @media (max-width: 640px) {
-      body { padding: 32px 16px 48px; }
+      body { padding: 32px 16px 16px; }
     }
     h1 {
       color: #ffffff;
@@ -58,13 +58,11 @@
       display: block;
       width: 100%;
       max-width: 500px;
-      height: 280px;
+      height: 220px;
       border: 0;
-      background: #ffffff;
-      border-radius: 8px;
     }
     @media (max-width: 640px) {
-      iframe { height: 260px; }
+      iframe { height: 200px; }
     }
   </style>
 </head>
@@ -77,8 +75,23 @@
   </p>
   <p style="color:#ffffff;font-weight:700;font-size:18px;margin:0 0 20px;">Start Now 👇</p>
   <iframe id="bba-survey" src="https://api.leadconnectorhq.com/widget/survey/XgvZ0aGeazDlYTpp8CQB"
-    title="Better Body Academy application"
+    title="Better Body Academy application" scrolling="no"
     allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+  <script>
+    // Fallback resize: some LeadConnector survey messages don't match
+    // form_embed.js's expected shape, so also handle them directly.
+    (function () {
+      var f = document.getElementById('bba-survey');
+      window.addEventListener('message', function (e) {
+        var d = e.data;
+        if (!d || typeof d !== 'object') return;
+        var h = d.height || (d.data && d.data.height);
+        if (h && Number(h) > 0) { f.style.height = Number(h) + 'px'; }
+      });
+    })();
+  </script>
 
   <script>
     // Report this page's height to a parent frame so the GHL embed can auto-resize.
