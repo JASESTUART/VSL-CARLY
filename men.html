@@ -23,7 +23,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="men.css?v=73" />
+  <link rel="stylesheet" href="men.css?v=74" />
   <style>
     @keyframes orb-float {
 
@@ -638,38 +638,25 @@
         try { return window.self !== window.top; } catch (e) { return true; }
       }
 
-      // When embedded, the parent page resizes this iframe to the full page
-      // height and does the scrolling itself (see bbaFrameHeight above), so
-      // this document never scrolls internally. That means CSS `position:
-      // fixed` centers the modal within the iframe's whole (tall) height
-      // instead of whatever part of the page is currently on screen. Ask the
-      // parent which local Y-range is actually visible right now and pin the
-      // modal to that instead.
       function showModal() {
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
       }
+      // When embedded in the real GHL funnel page, use GHL's own native
+      // popup instead of this modal - it lives directly on the real page
+      // (no nested-iframe positioning problems) and its content is managed
+      // in the GHL builder. Ask the parent page to open it. When viewed
+      // standalone (direct GitHub Pages link), fall back to this page's
+      // own modal since there's no GHL parent to ask.
       function openApply(e) {
         if (e) e.preventDefault();
-        preload();
-        if (!isEmbedded()) { showModal(); return; }
-        var done = false;
-        function onViewport(ev) {
-          if (!ev.data || !ev.data.bbaViewport) return;
-          done = true;
-          window.removeEventListener('message', onViewport);
-          modal.style.position = 'absolute';
-          modal.style.top = ev.data.bbaViewport.localVisibleTop + 'px';
-          modal.style.height = ev.data.bbaViewport.localVisibleHeight + 'px';
-          modal.style.bottom = 'auto';
-          showModal();
+        if (isEmbedded()) {
+          window.parent.postMessage('bbaOpenPopup', '*');
+          return;
         }
-        window.addEventListener('message', onViewport);
-        window.parent.postMessage('bbaRequestViewport', '*');
-        setTimeout(function () {
-          if (!done) { window.removeEventListener('message', onViewport); showModal(); }
-        }, 200); // fallback: show anyway (falls back to fixed/full-height centering)
+        preload();
+        showModal();
       }
       function closeApply() {
         modal.classList.remove('is-open');
