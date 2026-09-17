@@ -18,22 +18,57 @@
       margin: 0;
       padding: 0;
       min-height: 100%;
+      background: #05070d;
     }
     body {
-      background:
-        radial-gradient(900px circle at 50% -10%, rgba(56,182,255,0.15), transparent 60%),
-        radial-gradient(500px circle at 90% 120%, rgba(59,130,246,0.10), transparent 60%),
-        radial-gradient(circle at 50% 0%, transparent 0%, #05070d 70%),
-        linear-gradient(180deg, #05070d 0%, #0a1020 100%);
-      background-color: #05070d;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 48px 24px 64px;
+      padding: 0 24px 64px;
     }
     @media (max-width: 640px) {
-      body { padding: 32px 16px 48px; }
+      body { padding: 0 16px 48px; }
+    }
+    /* Exact replica of the VSL hero section's glow (same values as
+       .hero-coming-soon / .orb-float / .orb-float-2 in men.css/men.html),
+       clipped to this wrapper only - relies on plain DOM paint order
+       (this sits before .hero-content in the markup), not z-index. */
+    .hero-wrap {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 0 40px;
+    }
+    @media (max-width: 640px) {
+      .hero-wrap { padding: 32px 0 24px; }
+    }
+    .hero-orbs { position: absolute; inset: 0; pointer-events: none; }
+    .orb-1 {
+      position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 900px; border-radius: 50%;
+      background: rgba(56, 182, 255, 0.15);
+      filter: blur(160px);
+    }
+    .orb-2 {
+      position: absolute; bottom: -20%; right: 10%;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: rgba(59, 130, 246, 0.10);
+      filter: blur(120px);
+    }
+    .vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, transparent 0%, #05070d 70%);
+    }
+    .hero-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
     h1 {
       color: #ffffff;
@@ -76,12 +111,21 @@
 </head>
 
 <body>
-  <h1>Let's See If You <span style="color:#38B6FF;font-weight:800">Qualify</span> To Work With Us</h1>
-  <p class="hero-sub">
-    <strong style="color:#ffffff;">This application will take 60 seconds.</strong><br><br>
-    If you qualify, you'll be invited to book a free call where we'll map out your plan to lose 10-20kg and get your energy back.
-  </p>
-  <p style="color:#ffffff;font-weight:700;font-size:18px;margin:0 0 20px;">Start Now 👇</p>
+  <div class="hero-wrap">
+    <div class="hero-orbs">
+      <div class="orb-1"></div>
+      <div class="orb-2"></div>
+      <div class="vignette"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Let's See If You <span style="color:#38B6FF;font-weight:800">Qualify</span> To Work With Us</h1>
+      <p class="hero-sub">
+        <strong style="color:#ffffff;">This application will take 60 seconds.</strong><br><br>
+        If you qualify, you'll be invited to book a free call where we'll map out your plan to lose 10-20kg and get your energy back.
+      </p>
+      <p style="color:#ffffff;font-weight:700;font-size:18px;margin:0 0 20px;">Start Now 👇</p>
+    </div>
+  </div>
   <div class="survey-card">
     <iframe src="https://api.leadconnectorhq.com/widget/survey/XgvZ0aGeazDlYTpp8CQB"
       title="Better Body Academy application"
