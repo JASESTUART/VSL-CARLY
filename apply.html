@@ -114,7 +114,7 @@
         var children = document.body.children;
         var maxBottom = 0;
         for (var i = 0; i < children.length; i++) {
-          if (children[i].tagName === 'SCRIPT') continue;
+          if (children[i].tagName === 'SCRIPT' || children[i].id === 'bba-debug-badge') continue;
           var bottom = children[i].getBoundingClientRect().bottom;
           if (bottom > maxBottom) maxBottom = bottom;
         }
