@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's See If You Qualify — Better Body Academy</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="BADGE LOGO (Filled).png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #05070d;
+      min-height: 100%;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 24px 64px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 32px 16px 48px; }
+    }
+    h1 {
+      color: #ffffff;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: clamp(24px, 4.2vw, 38px);
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      margin: 0 0 20px;
+      max-width: 720px;
+    }
+    .hero-sub {
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      font-size: clamp(15px, 1.6vw, 18px);
+      line-height: 1.6;
+      max-width: 640px;
+      margin: 0 0 40px;
+    }
+    .survey-card {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #05070d;
+      box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
+    }
+    .survey-card iframe {
+      display: block;
+      width: 100%;
+      height: 640px;
+      border: 0;
+      background: #05070d;
+    }
+    @media (max-width: 640px) {
+      .survey-card iframe { height: 560px; }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Let's See If You <span style="color:#38B6FF;font-weight:800">Qualify</span> To Work With Us</h1>
+  <p class="hero-sub">
+    This application will take 60 seconds. If you qualify, you'll be invited to book a free call
+    where we'll map out your plan to lose 10-20kg and get your energy back.
+  </p>
+  <div class="survey-card">
+    <iframe src="https://api.leadconnectorhq.com/widget/survey/XgvZ0aGeazDlYTpp8CQB"
+      title="Better Body Academy application"
+      allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
+  </div>
+
+  <script>
+    // Report this page's height to a parent frame so the GHL embed can auto-resize.
+    (function () {
+      if (window.parent === window) return;
+      var last = 0;
+      function postHeight() {
+        var h = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+        if (h && h !== last) { last = h; window.parent.postMessage({ bbaFrameHeight: h }, '*'); }
+      }
+      window.addEventListener('load', postHeight);
+      window.addEventListener('resize', postHeight);
+      if (window.ResizeObserver) { try { new ResizeObserver(postHeight).observe(document.documentElement); } catch (e) {} }
+      [200, 600, 1200, 2500].forEach(function (t) { setTimeout(postHeight, t); });
+      window.addEventListener('message', function (e) { if (e.data === 'bbaRequestHeight') postHeight(); });
+    })();
+  </script>
+</body>
+
+</html>

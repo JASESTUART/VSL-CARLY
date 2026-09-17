@@ -23,7 +23,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="men.css?v=75" />
+  <link rel="stylesheet" href="men.css?v=76" />
   <style>
     @keyframes orb-float {
 
@@ -158,7 +158,7 @@
       </div>
 
       <div class="section-apply-cta">
-        <a href="#" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+        <a href="apply.html" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
       </div>
 
     </div>
@@ -204,7 +204,7 @@
       </div>
 
       <div class="section-apply-cta">
-        <a href="#" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+        <a href="apply.html" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
       </div>
     </div>
   </section>
@@ -289,7 +289,7 @@
     </div>
 
     <div class="section-apply-cta">
-      <a href="#" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+      <a href="apply.html" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
     </div>
   </section>
 
@@ -346,7 +346,7 @@
     </div>
 
     <div class="section-apply-cta">
-      <a href="#" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+      <a href="apply.html" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
     </div>
   </div>
 </section>
@@ -403,7 +403,7 @@
         </article>
       </div>
       <div class="section-apply-cta">
-        <a href="#" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+        <a href="apply.html" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
       </div>
     </div>
   </section>
@@ -466,7 +466,7 @@
 
       </div>
       <div class="section-apply-cta">
-        <a href="#" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+        <a href="apply.html" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
       </div>
     </div>
   </section>
@@ -479,7 +479,7 @@
       </h2>
 
       <div class="section-apply-cta">
-        <a href="#" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+        <a href="apply.html" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
       </div>
 
     </div>
@@ -495,17 +495,6 @@
     <p class="disclaimer">Testimonials and depictions are the real experiences of individual clients who have purchased and completed our coaching programs. Results vary and are not typical — they depend on individual effort, consistency, adherence to the program, and factors outside our control, including but not limited to starting weight, medical history, and lifestyle. Many clients do not complete the program, do not fully apply what they learn, or apply it inconsistently, which affects their outcomes.</p>
     <p class="disclaimer">This site is not a part of the YouTube, Google, Bing, Meta, Facebook, or Instagram website. This site is NOT endorsed by YouTube, Google, Bing, or Meta in any way. FACEBOOK and INSTAGRAM are trademarks of META Platforms, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.</p>
   </footer>
-
-  <!-- APPLICATION MODAL (embeds the BBACarly application) -->
-  <div class="apply-modal" id="applyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Apply for coaching">
-    <div class="apply-modal__backdrop" data-apply-close></div>
-    <div class="apply-modal__panel">
-      <button class="apply-modal__close" type="button" data-apply-close aria-label="Close">✕</button>
-      <div class="apply-modal__body">
-        <iframe id="applyFrame" title="Better Body Academy application" src="about:blank" data-src="https://api.leadconnectorhq.com/widget/survey/FqmULHqIsLIkApSkM2li" allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
-      </div>
-    </div>
-  </div>
 
   <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
@@ -624,62 +613,6 @@
     })();
   </script>
   <script src="men.js"></script>
-  <script>
-    (function () {
-      var modal = document.getElementById('applyModal');
-      var frame = document.getElementById('applyFrame');
-      var loaded = false;
-      function preload() {
-        if (!loaded) { frame.src = frame.getAttribute('data-src'); loaded = true; }
-      }
-      preload(); // start loading the survey immediately so it's ready before the modal is ever opened
-
-      function isEmbedded() {
-        try { return window.self !== window.top; } catch (e) { return true; }
-      }
-
-      function showModal() {
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-      // When embedded in the real GHL funnel page, use GHL's own native
-      // popup instead of this modal - it lives directly on the real page
-      // (no nested-iframe positioning problems) and its content is managed
-      // in the GHL builder. Ask the parent page to open it. When viewed
-      // standalone (direct GitHub Pages link), fall back to this page's
-      // own modal since there's no GHL parent to ask.
-      function openApply(e) {
-        if (e) e.preventDefault();
-        if (isEmbedded()) {
-          window.parent.postMessage('bbaOpenPopup', '*');
-          return;
-        }
-        preload();
-        showModal();
-      }
-      function closeApply() {
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        modal.style.position = '';
-        modal.style.top = '';
-        modal.style.height = '';
-        modal.style.bottom = '';
-      }
-      // Every "Apply Now" / "Apply for coaching" button opens the modal
-      document.querySelectorAll('.apply-blue').forEach(function (el) {
-        el.removeAttribute('onclick');
-        el.addEventListener('click', openApply);
-      });
-      modal.querySelectorAll('[data-apply-close]').forEach(function (el) {
-        el.addEventListener('click', closeApply);
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeApply();
-      });
-    })();
-  </script>
 </body>
 
 </html>
