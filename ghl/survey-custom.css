@@ -1,391 +1,215 @@
-/* ============================================================
-   BBA TWO-STEP SURVEY - CUSTOM CSS (dark brand version)
-   Paste into: Survey Builder > Styles > Custom CSS
-   Raw CSS only. Do not wrap in style tags.
-
-   Brand values (from men.css / apply.html):
-     PRIMARY        #00AEEF   (site CTA blue)  rgba 0,174,239  %2300AEEF
-     PRIMARY_HOVER  #0096cf
-     ACCENT         #38B6FF   (selected pill text)
-     BUTTON_TEXT    #ffffff
-     TEXT           #ffffff
-     TEXT_SOFT      #cbd5e1
-     TEXT_MUTED     #94a3b8
-     PLACEHOLDER    #64748b
-     INPUT_BG       #0c1220   (panel)
-     PILL_HOVER_BG  #131b2e   (raised card)
-     DOT_OFF        #334155                    %23334155
-     Borders        rgba(255,255,255,0.15) / hover rgba(255,255,255,0.30)
-     Font           Inter (body 400/500/600, button 800)
-
-   SET IN THE SURVEY BUILDER (CSS can't):
-     - Survey background: transparent (or #05070d)
-     - Back button ON, Progress bar OFF
-     - Survey must be NEW (pre-Turnstile surveys never submit)
-     - Placeholders: "First Name*", "Email*", "Phone*"
-     - No Text elements for the prompts / button words (CSS writes them)
-
-   UNPREFIXED on purpose - GHL adds .survey-<id> itself on live.
-   ============================================================ */
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
+/* ============================================================
+   BBA SURVEY - white rounded answers with a radio button,
+   left-aligned, Inter font, Back + Next buttons.
+   ":not(#z):not(#z)" only raises priority so GHL's own
+   styles can't override these rules. Leave it in.
+   ============================================================ */
+
+/* ---------- Font everywhere ---------- */
+.ghl-form-wrap *:not(#z),
+#_builder-form *:not(#z),
+.ghl-footer *:not(#z) {
+  font-family: "Inter", sans-serif !important;
+}
+
 /* ---------- Shell ---------- */
-#_builder-form {
-  max-width: 420px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  font-family: "Inter", sans-serif !important;
-}
-.ghl-form-wrap.ghl-form-wrap { box-shadow: none !important; background: transparent !important; }
-#_builder-form [id^="el_"] { margin-bottom: 12px !important; }
+.ghl-form-wrap.ghl-form-wrap:not(#z) { box-shadow: none !important; background: transparent !important; }
 
-/* ---------- Step dots ---------- */
-#_builder-form .ghl-page-current.slide-no-1::before,
-#_builder-form .ghl-page-current.slide-no-2::before {
-  content: "" !important;
-  display: block !important;
-  height: 10px !important;
-  margin: 0 auto 18px !important;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='66' height='10'%3E%3Crect width='28' height='10' rx='5' fill='%2300AEEF'/%3E%3Crect x='36' y='4' width='20' height='2' fill='%23334155'/%3E%3Ccircle cx='61' cy='5' r='5' fill='%23334155'/%3E%3C/svg%3E") center / 66px 10px no-repeat !important;
-}
-#_builder-form .ghl-page-current.slide-no-2::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='66' height='10'%3E%3Ccircle cx='5' cy='5' r='5' fill='%23334155'/%3E%3Crect x='10' y='4' width='20' height='2' fill='%23334155'/%3E%3Crect x='38' width='28' height='10' rx='5' fill='%2300AEEF'/%3E%3C/svg%3E") !important;
-}
-
-/* ---------- Slide prompt + question labels ---------- */
-#_builder-form .text-element.text-element,
-#_builder-form .text-element.text-element *,
-.text-element.text-element.text-element,
-.text-element.text-element.text-element * {
-  font-family: "Inter", sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  line-height: 1.5 !important;
-  color: #ffffff !important;
-  text-align: center !important;
-}
-#_builder-form .ghl-question:has(input[type="tel"]) .text-element,
-#_builder-form .ghl-question:has(input[type="tel"]) .text-element * {
-  text-align: left !important;
-}
-
-#_builder-form [id$="_first_name_0"]::before,
-#_builder-form [id$="_phone_0"]::before,
-#_builder-form .form-field-wrapper:has(input[type="radio"])::before {
-  display: block !important;
-  font-family: "Inter", sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  line-height: 1.5 !important;
-  color: #ffffff !important;
-  margin: 0 0 12px !important;
-}
-#_builder-form [id$="_first_name_0"]::before {
-  content: "Let's start with the basics" !important;
-  text-align: center !important;
-}
-#_builder-form [id$="_phone_0"]::before {
-  content: "Where can we reach you?" !important;
-  text-align: left !important;
-}
-#_builder-form .form-field-wrapper:has(input[type="radio"])::before {
-  content: "Which best describes you?" !important;
-  text-align: left !important;
-  margin: 6px 0 10px !important;
-}
-
-#_builder-form .form-builder--item:has(input.form-control) label.field-label {
-  display: none !important;
-}
-#_builder-form .form-builder--item label.field-label.field-label.field-label,
-label.field-label.field-label.field-label {
-  font-family: "Inter", sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
+/* ---------- Question titles: white, left, 16px ---------- */
+label:not(:has(input)):not(input + label):not(#z):not(#z),
+label:not(:has(input)):not(input + label):not(#z):not(#z) *,
+.text-element:not(#z):not(#z),
+.text-element:not(#z):not(#z) * {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
   color: #ffffff !important;
   text-align: left !important;
-  margin: 4px 0 10px !important;
 }
-#_builder-form label.field-label span { color: inherit !important; }
-#_builder-form .item-description { display: none !important; }
+label.field-label:not(#z):not(#z) { display: block !important; margin: 0 0 12px !important; }
+.item-description:not(#z):not(#z) { display: none !important; }
 
-/* ---------- Inputs ---------- */
-#_builder-form .form-builder--item input[type="text"].form-control.form-control.form-control,
-#_builder-form .form-builder--item input[type="email"].form-control.form-control.form-control,
-#_builder-form .form-builder--item input[type="tel"].form-control.form-control.form-control,
-#_builder-form .form-builder--item input[type="tel"].countryphone.countryphone.countryphone,
-input.form-control.form-control.form-control,
-input.countryphone.countryphone.countryphone {
-  font-family: "Inter", sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 400 !important;
-  line-height: 1.4 !important;
-  color: #ffffff !important;
-  caret-color: #00AEEF !important;
-  background-color: #0c1220 !important;
-  background-image: none !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 8px !important;
-  padding-top: 14px !important;
-  padding-bottom: 14px !important;
-  padding-right: 16px !important;
-  height: auto !important;
-  box-shadow: none !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-#_builder-form .input-icon { display: none !important; }
-#_builder-form .email-input.email-input {
-  overflow: hidden !important;
-  background-color: #0c1220 !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 8px !important;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-#_builder-form .email-input.email-input:focus-within {
-  border-color: #00AEEF !important;
-  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.25) !important;
-}
-#_builder-form .email-input input[type="email"].form-control.form-control.form-control,
-#_builder-form .email-input input[type="email"].form-control.form-control.form-control:focus {
-  margin-left: -20px !important;
-  width: calc(100% + 20px) !important;
-  max-width: none !important;
-  border: none !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-#_builder-form input.form-control::placeholder,
-#_builder-form input.countryphone::placeholder { color: #64748b !important; opacity: 1 !important; font-family: "Inter", sans-serif !important; }
-#_builder-form .form-builder--item input[type="text"].form-control.form-control.form-control { padding-left: 16px !important; }
-#_builder-form .form-builder--item input.form-control.form-control.form-control:focus,
-#_builder-form .form-builder--item input.countryphone.countryphone.countryphone:focus {
-  outline: none !important;
-  border-color: #00AEEF !important;
-  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.25) !important;
-}
-/* Browser autofill paints inputs light blue with dark text - keep them dark */
-#_builder-form input:-webkit-autofill,
-#_builder-form input:-webkit-autofill:hover,
-#_builder-form input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #ffffff !important;
-  -webkit-box-shadow: 0 0 0 1000px #0c1220 inset !important;
-  transition: background-color 9999s ease-in-out 0s !important;
-}
-
-/* ---------- Phone: country picker in its own box ---------- */
-#_builder-form .iti { display: flex !important; gap: 8px !important; width: 100% !important; }
-#_builder-form .iti__flag-container:not(:has(~ input)) { display: none !important; }
-#_builder-form .iti > .iti { flex: 1 1 auto !important; min-width: 0 !important; }
-#_builder-form .iti__flag-container { position: static !important; flex: 0 0 88px !important; padding: 0 !important; }
-#_builder-form .iti__selected-flag {
-  width: 100% !important;
-  height: 100% !important;
-  justify-content: center !important;
-  gap: 6px !important;
-  padding: 0 10px !important;
-  background-color: #0c1220 !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 8px !important;
-}
-#_builder-form .iti__arrow { border-top-color: #cbd5e1 !important; }
-#_builder-form .iti__arrow--up { border-bottom-color: #cbd5e1 !important; border-top-color: transparent !important; }
-/* Country dropdown list - dark to match */
-#_builder-form .iti__country-list {
-  background-color: #0c1220 !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-#_builder-form .iti__country.iti__highlight { background-color: #131b2e !important; }
-#_builder-form .iti__dial-code { color: #94a3b8 !important; }
-#_builder-form .iti input[type="tel"].form-control.form-control.form-control,
-#_builder-form .iti input[type="tel"].countryphone.countryphone.countryphone {
-  flex: 1 1 auto !important;
-  min-width: 0 !important;
-  width: auto !important;
-  padding-left: 16px !important;
-}
-
-/* ---------- Radio pills (the qualifier) ---------- */
-#_builder-form .bubble-option-container {
+/* ---------- Answer list: full width, stacked ---------- */
+*:has(> label input[type="radio"]):not(#z):not(#z),
+*:has(> [class*="option"] input[type="radio"]):not(#z):not(#z) {
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
-  gap: 8px !important;
+  gap: 10px !important;
   width: 100% !important;
-}
-#_builder-form .option-radio.option-radio { display: block !important; width: 100% !important; margin: 0 0 8px !important; }
-#_builder-form .standard-radio-container.standard-radio-container { display: block !important; width: 100% !important; }
-#_builder-form input[type="radio"] {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
-  opacity: 0 !important;
-  position: absolute !important;
-}
-#_builder-form label.bubble-label.bubble-label.bubble-label,
-label.bubble-label.bubble-label.bubble-label,
-#_builder-form .standard-radio-container.standard-radio-container label {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  min-width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-  gap: 8px !important;
-  margin: 0 !important;
-  padding: 12px 16px !important;
-  font-family: "Inter", sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.4 !important;
-  color: #cbd5e1 !important;
-  background-color: #0c1220 !important;
-  background-image: none !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 40px !important;
-  box-shadow: none !important;
-  cursor: pointer !important;
-  transition: all 0.2s ease !important;
-}
-#_builder-form label.bubble-label.bubble-label.bubble-label:hover,
-#_builder-form .standard-radio-container.standard-radio-container label:hover {
-  border-color: rgba(255, 255, 255, 0.30) !important;
-  background-color: #131b2e !important;
-}
-#_builder-form label.bubble-label.bubble-label.bubble-label:has(input:checked),
-label.bubble-label.bubble-label.bubble-label:has(input:checked),
-#_builder-form .standard-radio-container.standard-radio-container input:checked + label {
-  border-color: #00AEEF !important;
-  background-color: rgba(0, 174, 239, 0.15) !important;
-  color: #38B6FF !important;
-  font-weight: 600 !important;
-  box-shadow: 0 0 0 2px rgba(0, 174, 239, 0.25) !important;
 }
 
-/* ---------- Footer -> full-width button ---------- */
-.ghl-footer.ghl-footer.ghl-footer {
+/* ---------- Answers: white rounded pills ---------- */
+label:has(input[type="radio"]):not(#z):not(#z) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 13px 18px !important;
+  background: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease !important;
+}
+label:has(input[type="radio"]):not(#z):not(#z) *:not(input) {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  color: #05070d !important;
+  text-align: left !important;
+}
+label:has(input[type="radio"]):not(#z):not(#z):hover {
+  background: #eef2f7 !important;
+  border-color: #eef2f7 !important;
+}
+/* Selected answer: blue outline, bold text */
+label:has(input[type="radio"]:checked):not(#z):not(#z) {
+  background: #ffffff !important;
+  border-color: #00AEEF !important;
+  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.30) !important;
+}
+label:has(input[type="radio"]:checked):not(#z):not(#z) *:not(input) {
+  font-weight: 700 !important;
+}
+
+/* ---------- The radio button next to each answer ---------- */
+input[type="radio"]:not(#z):not(#z) {
+  display: inline-block !important;
+  position: static !important;
+  flex: 0 0 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  clip: auto !important;
+  pointer-events: auto !important;
+  accent-color: #00AEEF !important;
+  cursor: pointer !important;
+}
+
+/* ---------- Text inputs: white rounded ---------- */
+input[type="text"]:not(#z):not(#z),
+input[type="email"]:not(#z):not(#z),
+input[type="tel"]:not(#z):not(#z),
+textarea:not(#z):not(#z) {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #05070d !important;
+  background-color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 999px !important;
+  padding-top: 13px !important;
+  padding-bottom: 13px !important;
+  padding-right: 18px !important;
+  height: auto !important;
+  box-shadow: none !important;
+}
+input[type="text"]:not(#z):not(#z) { padding-left: 18px !important; }
+textarea:not(#z):not(#z) { border-radius: 20px !important; }
+input:not(#z):not(#z)::placeholder,
+textarea:not(#z):not(#z)::placeholder { color: #64748b !important; opacity: 1 !important; }
+input[type="text"]:not(#z):not(#z):focus,
+input[type="email"]:not(#z):not(#z):focus,
+input[type="tel"]:not(#z):not(#z):focus,
+textarea:not(#z):not(#z):focus {
+  outline: none !important;
+  border-color: #00AEEF !important;
+  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.30) !important;
+}
+
+/* ---------- Footer: Back + Next side by side ---------- */
+.ghl-footer.ghl-footer:not(#z) {
   background: transparent !important;
-  background-color: transparent !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   height: auto !important;
-  padding: 8px 0 0 !important;
-  max-width: 420px !important;
+  padding: 12px 0 0 !important;
   margin: 0 auto !important;
 }
-.ghl-footer-buttons.ghl-footer-buttons {
+.ghl-footer-buttons.ghl-footer-buttons:not(#z) {
   display: flex !important;
-  flex-direction: column-reverse !important;
+  flex-direction: row !important;
   align-items: center !important;
-  height: auto !important;
+  justify-content: space-between !important;
   gap: 10px !important;
-}
-.ghl-btn-placeholder.ghl-btn-placeholder { display: none !important; }
-
-.ghl-btn.ghl-footer-next.ghl-footer-next,
-.ghl-btn.ghl-submit-btn.ghl-submit-btn {
-  width: 100% !important;
   height: auto !important;
-  justify-content: center !important;
-  align-items: center !important;
-  padding: 18px 24px !important;
-  font-family: "Inter", sans-serif !important;
-  font-size: 18px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.1em !important;
-  text-transform: uppercase !important;
-  color: #ffffff !important;
-  background-color: #00AEEF !important;
-  border: none !important;
-  border-radius: 10px !important;
-  box-shadow: 0 8px 32px rgba(0, 174, 239, 0.35) !important;
-  cursor: pointer !important;
-  position: relative !important;
-  overflow: hidden !important;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
 }
-.ghl-btn.ghl-footer-next.ghl-footer-next:hover,
-.ghl-btn.ghl-submit-btn.ghl-submit-btn:hover {
-  background-color: #0096cf !important;
-  box-shadow: 0 12px 44px rgba(0, 174, 239, 0.55) !important;
-}
-.ghl-btn.ghl-footer-next.ghl-footer-next span { display: none !important; }
-.ghl-btn.ghl-submit-btn.ghl-submit-btn { font-size: 0 !important; height: auto !important; }
-.ghl-btn.ghl-footer-next.ghl-footer-next::before { content: "CONTINUE" !important; font-size: 18px !important; }
-.ghl-btn.ghl-submit-btn.ghl-submit-btn::before { content: "SUBMIT APPLICATION" !important; font-size: 18px !important; }
-.ghl-btn.ghl-footer-next.ghl-footer-next span {
-  color: #ffffff !important;
-  font-family: "Inter", sans-serif !important;
-}
-.ghl-btn.ghl-footer-next.ghl-footer-next svg { display: none !important; }
-.ghl-btn.ghl-footer-next.ghl-footer-next::after,
-.ghl-btn.ghl-submit-btn.ghl-submit-btn::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: -100% !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent) !important;
-  animation: tso-shimmer 3s ease-in-out infinite !important;
-  pointer-events: none !important;
-}
-@keyframes tso-shimmer { 0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; } }
+.ghl-btn-placeholder.ghl-btn-placeholder:not(#z) { display: none !important; }
 
-.ghl-btn.ghl-footer-back.ghl-footer-back {
+.ghl-btn.ghl-footer-next:not(#z):not(#z),
+.ghl-btn.ghl-submit-btn:not(#z):not(#z),
+.ghl-btn.ghl-footer-back:not(#z):not(#z) {
+  flex: 1 1 0 !important;
   width: auto !important;
   height: auto !important;
-  padding: 0 !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  font-family: "Inter", sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  text-transform: none !important;
-  color: #94a3b8 !important;
-  text-decoration: underline !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 13px 20px !important;
+  font-size: 0 !important;
+  border-radius: 999px !important;
   cursor: pointer !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
 }
-.ghl-btn.ghl-footer-back.ghl-footer-back:hover { color: #ffffff !important; }
-.ghl-btn.ghl-footer-back.ghl-footer-back span { display: none !important; }
-.ghl-btn.ghl-footer-back.ghl-footer-back svg { display: none !important; }
-.ghl-btn.ghl-footer-back.ghl-footer-back::before { content: "\2190\00a0 Back" !important; }
+.ghl-btn.ghl-footer-next:not(#z):not(#z),
+.ghl-btn.ghl-submit-btn:not(#z):not(#z) {
+  color: #ffffff !important;
+  background: #00AEEF !important;
+  border: 2px solid #00AEEF !important;
+  box-shadow: none !important;
+}
+.ghl-btn.ghl-footer-next:not(#z):not(#z):hover,
+.ghl-btn.ghl-submit-btn:not(#z):not(#z):hover {
+  background: #0096cf !important;
+  border-color: #0096cf !important;
+}
+.ghl-btn.ghl-footer-back:not(#z):not(#z) {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+.ghl-btn.ghl-footer-back:not(#z):not(#z):hover { border-color: #ffffff !important; }
 
-/* ---------- Trust line under the button ---------- */
-.ghl-footer.ghl-footer.ghl-footer::after {
-  content: "Takes 60 seconds - 100% free" !important;
-  display: block !important;
-  margin-top: 14px !important;
+/* Hide GHL's own words + arrows, write "Back" / "Next" / "Submit" */
+.ghl-btn.ghl-footer-next:not(#z) span,
+.ghl-btn.ghl-footer-next:not(#z) svg,
+.ghl-btn.ghl-footer-back:not(#z) span,
+.ghl-btn.ghl-footer-back:not(#z) svg,
+.ghl-btn.ghl-submit-btn:not(#z) span,
+.ghl-btn.ghl-submit-btn:not(#z) svg { display: none !important; }
+.ghl-btn.ghl-footer-next:not(#z):not(#z)::before,
+.ghl-btn.ghl-submit-btn:not(#z):not(#z)::before,
+.ghl-btn.ghl-footer-back:not(#z):not(#z)::before {
   font-family: "Inter", sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  color: #94a3b8 !important;
-  text-align: center !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
 }
+.ghl-btn.ghl-footer-next:not(#z):not(#z)::before { content: "Next" !important; }
+.ghl-btn.ghl-submit-btn:not(#z):not(#z)::before { content: "Submit" !important; }
+.ghl-btn.ghl-footer-back:not(#z):not(#z)::before { content: "Back" !important; }
+.ghl-btn.ghl-footer-next:not(#z)::after,
+.ghl-btn.ghl-submit-btn:not(#z)::after,
+.ghl-btn.ghl-footer-back:not(#z)::after { content: none !important; display: none !important; }
 
 /* ---------- Turnstile ---------- */
 .cf-turnstile, [class*="turnstile"] { margin: 8px 0 !important; max-width: 100% !important; }
 
-/* ---------- Mobile ---------- */
+/* ---------- Hide GHL's mobile progress bar ---------- */
 .survey-progress-bar-mobile.survey-progress-bar-mobile,
 .survey-progress-fill-mobile.survey-progress-fill-mobile { display: none !important; }
-@media (max-width: 768px) {
-  .ghl-btn.ghl-footer-next.ghl-footer-next,
-  .ghl-btn.ghl-submit-btn.ghl-submit-btn { padding: 16px 20px !important; }
-  .ghl-btn.ghl-footer-next.ghl-footer-next::before,
-  .ghl-btn.ghl-submit-btn.ghl-submit-btn::before { font-size: 16px !important; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .ghl-btn.ghl-footer-next.ghl-footer-next::after,
-  .ghl-btn.ghl-submit-btn.ghl-submit-btn::after { animation: none !important; }
-}
