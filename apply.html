@@ -60,9 +60,10 @@
       display: block;
       width: 100%;
       max-width: 500px;
-      height: 460px;
+      height: 600px;
       border: 0;
-      overflow-y: auto;
+      overflow: hidden;
+      transition: height 0.2s ease;
     }
   </style>
 </head>
@@ -75,10 +76,35 @@
   </p>
   <p style="color:#ffffff;font-weight:700;font-size:22px;margin:0 0 36px;">Start Now 👇</p>
   <iframe id="bba-survey" src="https://api.leadconnectorhq.com/widget/survey/XgvZ0aGeazDlYTpp8CQB"
-    title="Better Body Academy application"
+    title="Better Body Academy application" scrolling="no"
     allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
 
   <script>
+    // Grow the survey iframe to fit each slide so it never scrolls inside.
+    // The GHL survey posts its content height to the parent page (the same
+    // messages form_embed.js listens for); read it and size the iframe to it.
+    (function () {
+      var frame = document.getElementById('bba-survey');
+      function readHeight(d) {
+        if (Array.isArray(d)) {
+          var tagged = d.some(function (x) { return typeof x === 'string' && /height/i.test(x); });
+          if (!tagged) return 0;
+          for (var i = 0; i < d.length; i++) {
+            var n = parseInt(d[i], 10);
+            if (n > 0 && String(d[i]).replace(/px$/, '') == n) return n;
+          }
+          return 0;
+        }
+        if (d && typeof d === 'object') return parseInt(d.height || d.frameHeight, 10) || 0;
+        return 0;
+      }
+      window.addEventListener('message', function (e) {
+        if (!/leadconnectorhq\.com|msgsndr\.com|gohighlevel\.com/.test(e.origin)) return;
+        var h = readHeight(e.data);
+        if (h > 150 && h < 4000) frame.style.height = (h + 8) + 'px';
+      });
+    })();
+
     // Report this page's height to a parent frame so the GHL embed can auto-resize.
     //
     // NOTE: document.documentElement.scrollHeight is floored at the current
