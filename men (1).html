@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Better Body Academy — For Busy Mums 10+kg Overweight, Ready to Commit</title>
+  <meta name="description"
+    content="This offer is ONLY for busy mums who are 10+ kgs overweight and ready to commit to a structured plan. Family-friendly meals, weekly coaching, no restricting food, no living in the gym." />
+  <meta property="og:title" content="Better Body Academy — For Busy Mums 10+kg Overweight, Ready to Commit" />
+  <meta property="og:description" content="This offer is ONLY for busy mums who are 10+ kgs overweight and ready to commit to a structured plan. Family-friendly meals, weekly coaching, no restricting food, no living in the gym." />
+  <meta property="og:image" content="https://jasestuart.github.io/VSL-CARLY/carly-coach.webp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jasestuart.github.io/VSL-CARLY/men.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Better Body Academy — For Busy Mums 10+kg Overweight, Ready to Commit" />
+  <meta name="twitter:description" content="This offer is ONLY for busy mums who are 10+ kgs overweight and ready to commit to a structured plan. Family-friendly meals, weekly coaching, no restricting food, no living in the gym." />
+  <meta name="twitter:image" content="https://jasestuart.github.io/VSL-CARLY/carly-coach.webp" />
+  <link rel="icon" type="image/png" href="BADGE LOGO (Filled).png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="men.css?v=76" />
+  <style>
+    @keyframes orb-float {
+
+      0%,
+      100% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-50%, -30px);
+      }
+    }
+
+    .orb-float {
+      animation: orb-float 12s ease-in-out infinite;
+    }
+
+    .orb-float-2 {
+      animation: orb-float 14s ease-in-out infinite;
+      animation-delay: -6s;
+    }
+
+    .hero-coming-soon {
+      position: relative;
+      overflow: hidden;
+      padding: 40px 24px 40px;
+      display: grid;
+      place-items: center;
+    }
+    @media (max-width: 720px) {
+      /* compress hero so navbar + titles + video fit on the first screen */
+      .hero-coming-soon { padding-top: 28px; padding-bottom: 24px; }
+      .hero-coming-soon h1 { margin-bottom: 30px !important; }
+      .hero-sub { margin-bottom: 22px !important; }
+      .hero-sub span + span { margin-top: 14px !important; }
+    }
+
+    @keyframes beam-spin {
+      to { transform: rotate(360deg); }
+    }
+    /* Hero video custom (always-visible) controls over Vimeo */
+    #heroVideo .hv-bar {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+      opacity: 1; transition: opacity .25s ease;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    #heroVideo .hv-btn {
+      flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; padding: 0; background: none; border: 0; color: #fff; cursor: pointer;
+    }
+    #heroVideo .hv-btn svg { width: 22px; height: 22px; display: block; }
+    #heroVideo .hv-progress {
+      position: relative; flex: 1 1 auto; height: 5px; border-radius: 5px;
+      background: rgba(255,255,255,0.28); cursor: pointer;
+    }
+    #heroVideo .hv-filled {
+      position: absolute; left: 0; top: 0; bottom: 0; width: 0%;
+      background: #38B6FF; border-radius: 5px;
+    }
+    #heroVideo .hv-thumb {
+      position: absolute; top: 50%; left: 0%; width: 13px; height: 13px; border-radius: 50%;
+      background: #fff; transform: translate(-50%, -50%); box-shadow: 0 0 4px rgba(0,0,0,0.5); pointer-events: none;
+    }
+    #heroVideo .hv-time {
+      flex: 0 0 auto; color: #fff; font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap;
+    }
+    /* Apply buttons: fill with the title blue */
+    .apply-blue .bg-\[\#0A0A0A\],
+    .apply-blue .bg-\[\#050505\] {
+      background-color: #00AEEF !important;
+    }
+    @keyframes lines-slide {
+      0% { background-position: 0 0; }
+      100% { background-position: 24px 0; }
+    }
+    [style*="--border-gradient"]::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      border-radius: var(--border-radius-before, inherit);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      background: var(--border-gradient);
+      pointer-events: none;
+    }
+  </style>
+  <!-- PostHog analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_vQZ9PQ74CS2s2pJnev3S6hHz5kWjj7he93iPGSc8w2VJ', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+      capture_pageview: true,
+      capture_pageleave: true
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- BACKGROUND GLOW LAYER -->
+  <div class="bg-glow"></div>
+
+
+  <!-- 1. HERO (coming-soon style) -->
+  <section class="hero-coming-soon">
+    <div class="absolute inset-0 pointer-events-none">
+      <div
+        class="orb-float absolute top-[-10%] left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-[#38B6FF]/15 blur-[160px]">
+      </div>
+      <div
+        class="orb-float-2 absolute bottom-[-20%] right-[10%] w-[500px] h-[500px] rounded-full bg-[#3b82f6]/10 blur-[120px]">
+      </div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,transparent_0%,#05070d_70%)]"></div>
+    </div>
+
+    <div class="relative max-w-5xl text-center">
+      <h1
+        class="text-white"
+        style="font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(24px,4.2vw,38px);letter-spacing:-0.01em;line-height:1.35;margin-bottom:40px">
+        We Will Give You a <span style="color:#38B6FF;font-weight:800">Family-Friendly Meal Plan</span> + <span style="color:#38B6FF;font-weight:800">Weekly Coaching</span> So You Can Lose <span style="font-weight:800">10-20kg</span> Without Restricting Food or Living in the Gym
+      </h1>
+
+      <p class="hero-sub text-lg md:text-xl text-white/70 leading-relaxed"
+        style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin-bottom:48px">
+        <span style="display:block">Watch this video for all the details, then schedule a call on the next page</span>
+      </p>
+
+      <div class="hero-video-card relative mx-auto max-w-3xl mb-10 rounded-2xl overflow-hidden ring-1 ring-[#38B6FF]/30 shadow-[0_20px_60px_-20px_rgba(56,182,255,0.4)]">
+        <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+          <iframe src="https://www.loom.com/embed/3a9810ba43a5487786c3cb135f7eda79?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+            title="Better Body Academy video"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="section-apply-cta">
+        <a href="apply.html?v=38" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="section section-simpler" id="how-we-help">
+    <div class="container">
+      <h2 class="why-headline">How we can help</h2>
+
+      <div class="why-grid">
+        <article class="why-card">
+          <span class="why-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <h3 class="why-card-title">Food Freedom</h3>
+            <p class="why-card-desc">Family-friendly meals with shopping lists done for you, no separate cooking, no guesswork, no more diets.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <span class="why-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <h3 class="why-card-title">Custom Training Program</h3>
+            <p class="why-card-desc">Built around your body, your injuries, and whether you train at home or in a gym, with a video demo for every exercise.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <span class="why-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <h3 class="why-card-title">Weekly Coaching &amp; Accountability</h3>
+            <p class="why-card-desc">Check-ins, coaching calls, and your own app to track progress, so you're never guessing if it's working.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <span class="why-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <h3 class="why-card-title">A Community of Women Like You</h3>
+            <p class="why-card-desc">Access to a group of women on the same journey, not a generic app you use alone.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-apply-cta">
+        <a href="apply.html?v=38" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infinite before/after marquee (2 rows, right -> left) -->
+  <section class="hero-marquee-section" id="proof">
+    <div class="container">
+      <h2 class="proof-headline">4,000+ transformations and counting.</h2>
+      <p class="proof-intro">Real women, real lives, real results. No photoshoots. No cherry-picked outliers. Just what happens when the system is built right.</p>
+    </div>
+    <div class="hero-marquee" aria-label="Member before and after transformations">
+      <div class="hm-viewport">
+        <div class="hm-track hm-row-a">
+          <div class="hm-group">
+            <article class="hm-card"><img src="reviews/jo-c.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kaylah-b.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kellie-b.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/eden-f.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/tori-e.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/vikki-m.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/julie-w.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/erin-p.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/bex-p.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/amii-m.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/lisa-bush.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/karly-o.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/linda-j.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/sonia-r.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/lauren-t.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/alex-c.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/olivia-l.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/keli-s.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/michelle-f.webp" alt="Member transformation" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kerry-m.webp" alt="Member transformation" loading="lazy" /></article>
+          </div>
+          <div class="hm-group" aria-hidden="true">
+            <article class="hm-card"><img src="reviews/jo-c.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kaylah-b.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kellie-b.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/eden-f.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/tori-e.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/vikki-m.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/julie-w.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/erin-p.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/bex-p.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/amii-m.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/lisa-bush.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/karly-o.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/linda-j.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/sonia-r.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/lauren-t.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/alex-c.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/olivia-l.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/keli-s.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/michelle-f.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kerry-m.webp" alt="" loading="lazy" /></article>
+          </div>
+          <div class="hm-group" aria-hidden="true">
+            <article class="hm-card"><img src="reviews/jo-c.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kaylah-b.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kellie-b.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/eden-f.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/tori-e.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/vikki-m.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/julie-w.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/erin-p.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/bex-p.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/amii-m.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/lisa-bush.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/karly-o.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/linda-j.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/sonia-r.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/lauren-t.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/alex-c.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/olivia-l.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/keli-s.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/michelle-f.webp" alt="" loading="lazy" /></article>
+            <article class="hm-card"><img src="reviews/kerry-m.webp" alt="" loading="lazy" /></article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-apply-cta">
+      <a href="apply.html?v=38" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+    </div>
+  </section>
+
+
+
+  <!-- FEATURED QUOTE -->
+  <section class="featured-quote">
+    <div class="container">
+      <blockquote class="fq-text">This offer is ONLY for Busy Mums Who Are 10+ kgs Overweight and Ready to Commit to a Structured Plan</blockquote>
+    </div>
+  </section>
+
+  <!-- BEFORE/AFTER SLIDER -->
+<section style="background:#0d1526;padding:72px 24px;text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <h2 style="font-size:32px;font-weight:800;color:#ffffff;margin:0 0 8px;line-height:1.2;">One result. Up close.</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.4);margin:0 0 36px;font-weight:400;">Drag to see the transformation.</p>
+
+    <div id="ba-slider" style="position:relative;width:100%;max-width:480px;margin:0 auto 28px;border-radius:12px;overflow:hidden;cursor:ew-resize;user-select:none;aspect-ratio:3 / 4;background:#111;border:1px solid rgba(255,255,255,0.08);">
+
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;">
+        <img src="reviews/ba-after2.webp?v=10" alt="Vikki Milroy after" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+      </div>
+
+      <div id="ba-before" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;clip-path:inset(0 50% 0 0);">
+        <img src="reviews/ba-before2.webp?v=12" alt="Vikki Milroy before" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+      </div>
+
+      <div id="ba-line" style="position:absolute;top:0;bottom:0;left:50%;width:2px;background:#ffffff;transform:translateX(-50%);z-index:10;pointer-events:none;"></div>
+
+      <div id="ba-handle" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#ffffff;z-index:11;display:flex;align-items:center;justify-content:center;pointer-events:none;box-shadow:0 2px 12px rgba(0,0,0,0.5);">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M6 10H14M6 10L8 8M6 10L8 12M14 10L12 8M14 10L12 12" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div style="position:absolute;top:14px;left:14px;font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:4px;z-index:12;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.2);pointer-events:none;">Before</div>
+      <div style="position:absolute;top:14px;right:14px;font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:4px;z-index:12;background:#00AEEF;color:#0a0a0a;pointer-events:none;">After</div>
+    </div>
+
+    <div style="display:flex;max-width:560px;margin:0 auto 24px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;">
+      <div style="flex:1;padding:18px 12px;border-right:1px solid rgba(255,255,255,0.08);text-align:center;">
+        <div style="font-size:24px;font-weight:800;color:#ffffff;line-height:1;margin-bottom:4px;">17kg</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.05em;">lost</div>
+      </div>
+      <div style="flex:1;padding:18px 12px;border-right:1px solid rgba(255,255,255,0.08);text-align:center;">
+        <div style="font-size:24px;font-weight:800;color:#ffffff;line-height:1;margin-bottom:4px;">12</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.05em;">months</div>
+      </div>
+      <div style="flex:1;padding:18px 12px;text-align:center;">
+        <div style="font-size:24px;font-weight:800;color:#ffffff;line-height:1;margin-bottom:4px;">27cm</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.05em;">off the waist</div>
+      </div>
+    </div>
+
+    <div class="section-apply-cta">
+      <a href="apply.html?v=38" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var slider = document.getElementById('ba-slider');
+  var before = document.getElementById('ba-before');
+  var line = document.getElementById('ba-line');
+  var handle = document.getElementById('ba-handle');
+  var dragging = false;
+  function setPos(x) {
+    var r = slider.getBoundingClientRect();
+    var pct = Math.max(2, Math.min(98, ((x - r.left) / r.width) * 100));
+    before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+    line.style.left = pct + '%';
+    handle.style.left = pct + '%';
+  }
+  slider.addEventListener('mousedown', function(e){ dragging=true; setPos(e.clientX); e.preventDefault(); });
+  window.addEventListener('mouseup', function(){ dragging=false; });
+  window.addEventListener('mousemove', function(e){ if(dragging) setPos(e.clientX); });
+  slider.addEventListener('touchstart', function(e){ dragging=true; setPos(e.touches[0].clientX); }, {passive:true});
+  window.addEventListener('touchend', function(){ dragging=false; });
+  window.addEventListener('touchmove', function(e){ if(dragging) setPos(e.touches[0].clientX); }, {passive:true});
+})();
+</script>
+
+
+
+
+
+
+
+  <!-- VIDEO TESTIMONIALS -->
+  <section class="video-testimonials section" id="reviews">
+    <div class="container">
+      <h2 class="vt-headline">Take a look at what our <span class="grad">members</span> are saying</h2>
+
+      <div class="vt-grid vt-grid-4">
+        <article class="vt-card">
+          <div class="vt-video"><iframe src="https://drive.google.com/file/d/16IyrVhEGNvSOw6qFoJ9C7PJKDU3dGYel/preview" title="Fiona testimonial" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="vt-card">
+          <div class="vt-video"><iframe src="https://drive.google.com/file/d/11kFvwL85bVMybm7GflrZray_ANEh-iex/preview" title="Renee testimonial" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="vt-card">
+          <div class="vt-video"><iframe src="https://drive.google.com/file/d/1etGgcRV7lePPcNUGFzMwnLL6H88ros7R/preview" title="Emma testimonial" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="vt-card">
+          <div class="vt-video"><iframe src="https://drive.google.com/file/d/1b66MeAoudCI7nZYq0PRl-dbg-TvdYMer/preview" title="Nicole Corny testimonial" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        </article>
+      </div>
+      <div class="section-apply-cta">
+        <a href="apply.html?v=38" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <h2 class="faq-headline">
+        Frequently Asked
+        <span class="grad">Questions</span>
+      </h2>
+      <p class="section-sub">The stuff women ask before they sign up. Straight answers, no fluff.</p>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>
+            <span>I've tried everything. Will this actually work?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>That's why we built it. The reason you've failed before isn't you — it's that every program you've
+              tried was built for someone whose life looks nothing like yours. We start with the reality of your week,
+              not a fantasy version of it.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>I've got zero time. Genuinely.</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Then you're exactly who this is built for. Short, focused sessions. Meals that don't require
+              a Sunday meal-prep marathon. The whole system is designed around women with careers, families,
+              and limited hours.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Do I have to go keto / carnivore / no carbs?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>No. No extreme diets. You'll eat real food, still enjoy the occasional glass of wine, and get leaner
+              every week. If a coach tells you a food is 'bad,' they're selling you religion, not results.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>What if I'm 10kg over? What if I'm 40kg over?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>We've coached both ends of that spectrum and everyone in between. The system doesn't change based on
+              how much you have to lose — the timeline does.</p>
+          </div>
+        </details>
+
+      </div>
+      <div class="section-apply-cta">
+        <a href="apply.html?v=38" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FINAL CTA -->
+  <section class="final-cta section">
+    <div class="container">
+      <h2 class="final-cta-headline">
+        We only take <span class="grad">25 new women</span> a month, once we hit that, enrollment closes until next month.
+      </h2>
+
+      <div class="section-apply-cta">
+        <a href="apply.html?v=38" class="btn btn-primary apply-blue">BOOK YOUR CALL</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <p class="copyright">Copyright 2026 Better Body Academy.</p>
+    <p class="disclaimer"><a href="https://www.betterbodyacademy.com/terms" target="_blank" rel="noopener">Terms</a> | <a href="https://www.betterbodyacademy.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></p>
+    <p class="disclaimer" style="font-weight:800;">IMPORTANT: RESULTS DISCLAIMER</p>
+    <p class="disclaimer">Results shown above are of clients who followed their program, attended coaching calls, and completed their check-ins as assigned.</p>
+    <p class="disclaimer">Better Body Academy is a health, fitness, and nutrition coaching company. We do not sell a weight-loss product, supplement, or medical treatment. We believe that with the right training, nutrition, and coaching structure, individuals can make meaningful changes to their body composition and health — but we do not guarantee you will achieve any specific result.</p>
+    <p class="disclaimer">Testimonials and depictions are the real experiences of individual clients who have purchased and completed our coaching programs. Results vary and are not typical — they depend on individual effort, consistency, adherence to the program, and factors outside our control, including but not limited to starting weight, medical history, and lifestyle. Many clients do not complete the program, do not fully apply what they learn, or apply it inconsistently, which affects their outcomes.</p>
+    <p class="disclaimer">This site is not a part of the YouTube, Google, Bing, Meta, Facebook, or Instagram website. This site is NOT endorsed by YouTube, Google, Bing, or Meta in any way. FACEBOOK and INSTAGRAM are trademarks of META Platforms, Inc. YOUTUBE is a trademark of GOOGLE Inc. BING is a trademark of MICROSOFT Inc.</p>
+  </footer>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+    // Always-visible custom controls over the Vimeo hero video
+    (function () {
+      if (!window.Vimeo || !document.getElementById('heroPlayer')) return;
+      var wrap = document.getElementById('heroVideo');
+      var player = new Vimeo.Player(document.getElementById('heroPlayer'));
+      var toggle = document.getElementById('hvToggle');
+      var playBtn = document.getElementById('hvPlay');
+      var icoPlay = playBtn.querySelector('.hv-ico-play');
+      var icoPause = playBtn.querySelector('.hv-ico-pause');
+      var muteBtn = document.getElementById('hvMute');
+      var icoMuted = muteBtn.querySelector('.hv-ico-muted');
+      var icoLoud = muteBtn.querySelector('.hv-ico-loud');
+      var fullBtn = document.getElementById('hvFull');
+      var progress = document.getElementById('hvProgress');
+      var filled = document.getElementById('hvFilled');
+      var thumb = document.getElementById('hvThumb');
+      var timeEl = document.getElementById('hvTime');
+      var duration = 0, scrubbing = false, lastPct = 0;
+
+      function fmt(s) {
+        s = Math.max(0, Math.floor(s || 0));
+        var m = Math.floor(s / 60), r = s % 60;
+        return m + ':' + (r < 10 ? '0' : '') + r;
+      }
+      function setPct(p) {
+        p = Math.max(0, Math.min(1, p));
+        lastPct = p;
+        filled.style.width = (p * 100) + '%';
+        thumb.style.left = (p * 100) + '%';
+      }
+      function showPlaying(playing) {
+        icoPlay.style.display = playing ? 'none' : 'block';
+        icoPause.style.display = playing ? 'block' : 'none';
+        playBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+      }
+      function showMuted(muted) {
+        icoMuted.style.display = muted ? 'block' : 'none';
+        icoLoud.style.display = muted ? 'none' : 'block';
+        muteBtn.setAttribute('aria-label', muted ? 'Unmute' : 'Mute');
+      }
+
+      player.getDuration().then(function (d) { duration = d; timeEl.innerHTML = '0:00&nbsp;/&nbsp;' + fmt(d); }).catch(function(){});
+      player.getMuted().then(showMuted).catch(function(){});
+      player.on('play', function () { showPlaying(true); });
+      player.on('pause', function () { showPlaying(false); });
+      player.on('ended', function () { showPlaying(false); });
+      player.on('volumechange', function (d) { showMuted(!!d.muted || d.volume === 0); });
+      player.on('timeupdate', function (d) {
+        duration = d.duration || duration;
+        if (!scrubbing) { setPct(duration ? d.seconds / duration : 0); }
+        timeEl.innerHTML = fmt(d.seconds) + '&nbsp;/&nbsp;' + fmt(duration);
+      });
+
+      function togglePlay() {
+        player.getPaused().then(function (p) { return p ? player.play() : player.pause(); }).catch(function(){});
+      }
+      toggle.addEventListener('click', togglePlay);
+      playBtn.addEventListener('click', function (e) { e.stopPropagation(); togglePlay(); });
+      muteBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        player.getMuted().then(function (m) { return player.setMuted(!m); }).then(function () {
+          return player.getVolume();
+        }).then(function (v) { if (v === 0) player.setVolume(1); }).catch(function(){});
+      });
+      fullBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var el = wrap;
+        if (document.fullscreenElement) { document.exitFullscreen(); }
+        else if (el.requestFullscreen) { el.requestFullscreen(); }
+        else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+        else if (player.requestFullscreen) { player.requestFullscreen(); }
+      });
+
+      function pctFromEvent(e) {
+        var r = progress.getBoundingClientRect();
+        var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+        var p = Math.max(0, Math.min(1, x / r.width));
+        setPct(p);
+        return p;
+      }
+      function commitSeek() {
+        if (duration) player.setCurrentTime(lastPct * duration).catch(function(){});
+      }
+      progress.addEventListener('mousedown', function (e) { scrubbing = true; pctFromEvent(e); e.preventDefault(); });
+      window.addEventListener('mousemove', function (e) { if (scrubbing) pctFromEvent(e); });
+      window.addEventListener('mouseup', function () { if (!scrubbing) return; scrubbing = false; commitSeek(); });
+      progress.addEventListener('touchstart', function (e) { scrubbing = true; pctFromEvent(e); }, { passive: true });
+      window.addEventListener('touchmove', function (e) { if (scrubbing) pctFromEvent(e); }, { passive: true });
+      window.addEventListener('touchend', function () { if (!scrubbing) return; scrubbing = false; commitSeek(); });
+    })();
+  </script>
+  <script>
+    // Report this page's height to a parent frame so the embed can auto-resize
+    (function () {
+      if (window.parent === window) return; // not embedded
+      var last = 0;
+      function postHeight() {
+        var h = Math.max(
+          document.body ? document.body.scrollHeight : 0,
+          document.documentElement.scrollHeight,
+          document.body ? document.body.offsetHeight : 0,
+          document.documentElement.offsetHeight
+        );
+        if (h && h !== last) { last = h; window.parent.postMessage({ bbaFrameHeight: h }, '*'); }
+      }
+      window.addEventListener('load', postHeight);
+      window.addEventListener('resize', postHeight);
+      document.addEventListener('DOMContentLoaded', postHeight);
+      if (window.ResizeObserver) { try { new ResizeObserver(postHeight).observe(document.documentElement); } catch (e) {} }
+      // Late-loading content (video, images, embeds) can grow the page after load
+      [200, 600, 1200, 2500, 4000].forEach(function (t) { setTimeout(postHeight, t); });
+      window.addEventListener('message', function (e) { if (e.data === 'bbaRequestHeight') postHeight(); });
+    })();
+  </script>
+  <script src="men.js"></script>
+  <script>
+/* BBA VSL tracking -> PostHog
+   Works when the page is embedded in the GHL page (iframe) or opened directly.
+   Events:
+     video_play, video_progress (10..100%), video_pause, video_complete   [Vimeo: exact | Loom: play only]
+     cta_click        which button, video position, sections seen, time on page
+     section_view     each section that came into view (= scroll depth)
+     page_exit        summary of the visit (watched?, clicked?, how far down)
+     apply_view, survey_started   on apply.html
+*/
+(function () {
+  if (!window.posthog) return;
+  var page = /apply\.html/i.test(location.pathname) ? 'apply' : 'vsl';
+  var start = Date.now();
+  function secs() { return Math.round((Date.now() - start) / 1000); }
+
+  // ---------------- APPLY PAGE ----------------
+  if (page === 'apply') {
+    posthog.capture('apply_view');
+    var survey = document.getElementById('bba-survey');
+    var started = false;
+    window.addEventListener('blur', function () {
+      setTimeout(function () {
+        if (!started && document.activeElement === survey) {
+          started = true;
+          posthog.capture('survey_started', { sec_on_page: secs() });
+        }
+      }, 0);
+    });
+    window.addEventListener('pagehide', function () {
+      posthog.capture('apply_exit', { survey_started: started, sec_on_page: secs() }, { transport: 'sendBeacon' });
+    });
+    return;
+  }
+
+  // ---------------- VSL PAGE ----------------
+  var played = false, playAt = null, videoSec = 0, videoPct = 0, maxPct = 0, duration = 0;
+  var clicked = false, hit = {};
+  var heroFrame = document.querySelector('.hero-video-card iframe');
+  var isVimeo = heroFrame && /player\.vimeo\.com/.test(heroFrame.src);
+
+  function markPlay(source) {
+    if (played) return;
+    played = true; playAt = Date.now();
+    posthog.capture('video_play', { source: source, sec_on_page: secs() });
+  }
+
+  if (isVimeo && window.Vimeo) {
+    // Exact tracking (Vimeo player API)
+    var player = new Vimeo.Player(heroFrame);
+    player.getDuration().then(function (d) { duration = d; });
+    player.on('play', function () { markPlay('vimeo'); });
+    player.on('timeupdate', function (d) {
+      videoSec = Math.round(d.seconds); videoPct = Math.round(d.percent * 100);
+      if (videoPct > maxPct) maxPct = videoPct;
+      [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].forEach(function (m) {
+        if (videoPct >= m && !hit[m]) { hit[m] = 1; posthog.capture('video_progress', { pct: m, video_seconds: videoSec }); }
+      });
+    });
+    player.on('pause', function (d) {
+      if (d.percent < 0.99) posthog.capture('video_pause', { video_pct: Math.round(d.percent * 100), video_seconds: Math.round(d.seconds) });
+    });
+    player.on('ended', function () { posthog.capture('video_complete'); });
+  } else if (heroFrame) {
+    // Loom: no playback API. Detect the first click into the player = play.
+    window.addEventListener('blur', function () {
+      setTimeout(function () { if (document.activeElement === heroFrame) markPlay('loom'); }, 0);
+    });
+  }
+
+  // Which sections people reach (works inside the GHL iframe too)
+  var sections = [].slice.call(document.querySelectorAll('section'));
+  var seen = [];
+  function sectionName(s, i) {
+    return s.id || (s.className && String(s.className).split(' ')[0]) || ('section-' + (i + 1));
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var i = sections.indexOf(e.target), name = sectionName(e.target, i);
+        if (seen.indexOf(name) > -1) return;
+        seen.push(name);
+        posthog.capture('section_view', { section: name, section_number: i + 1, of_sections: sections.length, sec_on_page: secs() });
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  // Every BOOK YOUR CALL button
+  var ctas = [].slice.call(document.querySelectorAll('a[href*="apply.html"]'));
+  ctas.forEach(function (a, i) {
+    a.addEventListener('click', function () {
+      clicked = true;
+      var sec = a.closest('section'), si = sections.indexOf(sec);
+      var sinceplay = playAt ? Math.round((Date.now() - playAt) / 1000) : null;
+      posthog.capture('cta_click', {
+        button_number: i + 1,
+        button_section: sec ? sectionName(sec, si) : 'unknown',
+        video_played: played,
+        video_seconds: isVimeo ? videoSec : null,
+        video_pct: isVimeo ? videoPct : null,
+        max_video_pct: isVimeo ? maxPct : null,
+        watched_full: isVimeo ? maxPct >= 95 : null,
+        sec_since_play: sinceplay,            // Loom fallback: roughly how far into the video
+        sections_seen: seen.length,
+        sec_on_page: secs()
+      }, { transport: 'sendBeacon' });
+    });
+  });
+
+  window.addEventListener('pagehide', function () {
+    posthog.capture('page_exit', {
+      video_played: played,
+      max_video_pct: isVimeo ? maxPct : null,
+      sec_since_play: playAt ? Math.round((Date.now() - playAt) / 1000) : null,
+      cta_clicked: clicked,
+      sections_seen: seen.length,
+      last_section: seen[seen.length - 1] || null,
+      sec_on_page: secs()
+    }, { transport: 'sendBeacon' });
+  });
+})();
+
+  </script>
+</body>
+
+</html>

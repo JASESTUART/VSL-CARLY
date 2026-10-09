@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's See If You Qualify — Better Body Academy</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#05070d" />
+  <link rel="icon" type="image/png" href="BADGE LOGO (Filled).png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    body {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(59,130,246,0.20), transparent 55%),
+        radial-gradient(circle at 85% 90%, rgba(30,58,138,0.25), transparent 55%),
+        radial-gradient(circle at 50% 50%, rgba(96,165,250,0.05), transparent 70%),
+        linear-gradient(180deg, #05070d 0%, #0a1020 100%);
+      background-color: #05070d;
+      background-attachment: fixed;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 24px 40px;
+    }
+    @media (max-width: 640px) {
+      body { padding: 32px 16px 32px; }
+    }
+    h1 {
+      color: #ffffff;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 5.2vw, 46px);
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      margin: 0 0 40px;
+      max-width: 760px;
+    }
+    .hero-sub {
+      color: #ffffff;
+      text-align: center;
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.7;
+      max-width: 660px;
+      margin: 0 0 48px;
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      height: 460px;
+      border: 0;
+      overflow-y: auto;
+    }
+  </style>
+  <!-- PostHog analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_vQZ9PQ74CS2s2pJnev3S6hHz5kWjj7he93iPGSc8w2VJ', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+      capture_pageview: true,
+      capture_pageleave: true
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Let's See If You <span style="color:#38B6FF;font-weight:800">Qualify</span> To Work With Us</h1>
+  <p class="hero-sub">
+    <strong style="color:#ffffff;">This application will take 60 seconds.</strong><br><br>
+    <span style="color:rgba(255,255,255,0.55);">If you qualify, you'll be invited to book a free call where we'll map out your plan to lose 10-20kg and get your energy back.</span>
+  </p>
+  <p style="color:#ffffff;font-weight:700;font-size:22px;margin:0 0 36px;">Start Now 👇</p>
+  <iframe id="bba-survey" src="https://api.leadconnectorhq.com/widget/survey/XgvZ0aGeazDlYTpp8CQB"
+    title="Better Body Academy application"
+    allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
+
+  <script>
+    // Report this page's height to a parent frame so the GHL embed can auto-resize.
+    //
+    // NOTE: document.documentElement.scrollHeight is floored at the current
+    // viewport height (i.e. the outer iframe's CURRENT box size) even when the
+    // real content is much shorter - so once the outer frame starts tall, it
+    // can never be told to shrink via scrollHeight. Measure the real bottom
+    // edge of the content instead, via getBoundingClientRect, which reflects
+    // actual layout regardless of how tall the iframe box currently is.
+    (function () {
+      if (window.parent === window) return;
+      var last = 0;
+      function postHeight() {
+        var children = document.body.children;
+        var maxBottom = 0;
+        for (var i = 0; i < children.length; i++) {
+          if (children[i].tagName === 'SCRIPT') continue;
+          var bottom = children[i].getBoundingClientRect().bottom;
+          if (bottom > maxBottom) maxBottom = bottom;
+        }
+        var paddingBottom = parseFloat(getComputedStyle(document.body).paddingBottom) || 0;
+        var h = Math.ceil(maxBottom + paddingBottom);
+        if (h && h !== last) { last = h; window.parent.postMessage({ bbaFrameHeight: h }, '*'); }
+      }
+      window.addEventListener('load', postHeight);
+      window.addEventListener('resize', postHeight);
+      if (window.ResizeObserver) { try { new ResizeObserver(postHeight).observe(document.body); } catch (e) {} }
+      [200, 600, 1200, 2500, 4000].forEach(function (t) { setTimeout(postHeight, t); });
+      window.addEventListener('message', function (e) { if (e.data === 'bbaRequestHeight') postHeight(); });
+    })();
+  </script>
+  <script>
+/* BBA VSL tracking -> PostHog
+   Works when the page is embedded in the GHL page (iframe) or opened directly.
+   Events:
+     video_play, video_progress (10..100%), video_pause, video_complete   [Vimeo: exact | Loom: play only]
+     cta_click        which button, video position, sections seen, time on page
+     section_view     each section that came into view (= scroll depth)
+     page_exit        summary of the visit (watched?, clicked?, how far down)
+     apply_view, survey_started   on apply.html
+*/
+(function () {
+  if (!window.posthog) return;
+  var page = /apply\.html/i.test(location.pathname) ? 'apply' : 'vsl';
+  var start = Date.now();
+  function secs() { return Math.round((Date.now() - start) / 1000); }
+
+  // ---------------- APPLY PAGE ----------------
+  if (page === 'apply') {
+    posthog.capture('apply_view');
+    var survey = document.getElementById('bba-survey');
+    var started = false;
+    window.addEventListener('blur', function () {
+      setTimeout(function () {
+        if (!started && document.activeElement === survey) {
+          started = true;
+          posthog.capture('survey_started', { sec_on_page: secs() });
+        }
+      }, 0);
+    });
+    window.addEventListener('pagehide', function () {
+      posthog.capture('apply_exit', { survey_started: started, sec_on_page: secs() }, { transport: 'sendBeacon' });
+    });
+    return;
+  }
+
+  // ---------------- VSL PAGE ----------------
+  var played = false, playAt = null, videoSec = 0, videoPct = 0, maxPct = 0, duration = 0;
+  var clicked = false, hit = {};
+  var heroFrame = document.querySelector('.hero-video-card iframe');
+  var isVimeo = heroFrame && /player\.vimeo\.com/.test(heroFrame.src);
+
+  function markPlay(source) {
+    if (played) return;
+    played = true; playAt = Date.now();
+    posthog.capture('video_play', { source: source, sec_on_page: secs() });
+  }
+
+  if (isVimeo && window.Vimeo) {
+    // Exact tracking (Vimeo player API)
+    var player = new Vimeo.Player(heroFrame);
+    player.getDuration().then(function (d) { duration = d; });
+    player.on('play', function () { markPlay('vimeo'); });
+    player.on('timeupdate', function (d) {
+      videoSec = Math.round(d.seconds); videoPct = Math.round(d.percent * 100);
+      if (videoPct > maxPct) maxPct = videoPct;
+      [10, 20, 30, 40, 50, 60, 70, 80, 90, 100].forEach(function (m) {
+        if (videoPct >= m && !hit[m]) { hit[m] = 1; posthog.capture('video_progress', { pct: m, video_seconds: videoSec }); }
+      });
+    });
+    player.on('pause', function (d) {
+      if (d.percent < 0.99) posthog.capture('video_pause', { video_pct: Math.round(d.percent * 100), video_seconds: Math.round(d.seconds) });
+    });
+    player.on('ended', function () { posthog.capture('video_complete'); });
+  } else if (heroFrame) {
+    // Loom: no playback API. Detect the first click into the player = play.
+    window.addEventListener('blur', function () {
+      setTimeout(function () { if (document.activeElement === heroFrame) markPlay('loom'); }, 0);
+    });
+  }
+
+  // Which sections people reach (works inside the GHL iframe too)
+  var sections = [].slice.call(document.querySelectorAll('section'));
+  var seen = [];
+  function sectionName(s, i) {
+    return s.id || (s.className && String(s.className).split(' ')[0]) || ('section-' + (i + 1));
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var i = sections.indexOf(e.target), name = sectionName(e.target, i);
+        if (seen.indexOf(name) > -1) return;
+        seen.push(name);
+        posthog.capture('section_view', { section: name, section_number: i + 1, of_sections: sections.length, sec_on_page: secs() });
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  // Every BOOK YOUR CALL button
+  var ctas = [].slice.call(document.querySelectorAll('a[href*="apply.html"]'));
+  ctas.forEach(function (a, i) {
+    a.addEventListener('click', function () {
+      clicked = true;
+      var sec = a.closest('section'), si = sections.indexOf(sec);
+      var sinceplay = playAt ? Math.round((Date.now() - playAt) / 1000) : null;
+      posthog.capture('cta_click', {
+        button_number: i + 1,
+        button_section: sec ? sectionName(sec, si) : 'unknown',
+        video_played: played,
+        video_seconds: isVimeo ? videoSec : null,
+        video_pct: isVimeo ? videoPct : null,
+        max_video_pct: isVimeo ? maxPct : null,
+        watched_full: isVimeo ? maxPct >= 95 : null,
+        sec_since_play: sinceplay,            // Loom fallback: roughly how far into the video
+        sections_seen: seen.length,
+        sec_on_page: secs()
+      }, { transport: 'sendBeacon' });
+    });
+  });
+
+  window.addEventListener('pagehide', function () {
+    posthog.capture('page_exit', {
+      video_played: played,
+      max_video_pct: isVimeo ? maxPct : null,
+      sec_since_play: playAt ? Math.round((Date.now() - playAt) / 1000) : null,
+      cta_clicked: clicked,
+      sections_seen: seen.length,
+      last_section: seen[seen.length - 1] || null,
+      sec_on_page: secs()
+    }, { transport: 'sendBeacon' });
+  });
+})();
+
+  </script>
+</body>
+
+</html>
