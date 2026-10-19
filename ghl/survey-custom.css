@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* ============================================================
+   BBA SURVEY - white rounded answers with a radio button,
+   left-aligned, Inter font, Back + Next buttons.
+   ":not(#z):not(#z)" only raises priority so GHL's own
+   styles can't override these rules. Leave it in.
+   ============================================================ */
+
+/* ---------- Font everywhere ---------- */
+.ghl-form-wrap *:not(#z),
+#_builder-form *:not(#z),
+.ghl-footer *:not(#z) {
+  font-family: "Inter", sans-serif !important;
+}
+
+/* ---------- Shell ---------- */
+.ghl-form-wrap.ghl-form-wrap:not(#z) { box-shadow: none !important; background: transparent !important; }
+
+/* ---------- Question titles: white, left, 16px ---------- */
+label:not(:has(input)):not(input + label):not(#z):not(#z),
+label:not(:has(input)):not(input + label):not(#z):not(#z) *,
+.text-element:not(#z):not(#z),
+.text-element:not(#z):not(#z) * {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  color: #ffffff !important;
+  text-align: left !important;
+}
+label.field-label:not(#z):not(#z) { display: block !important; margin: 0 0 12px !important; }
+.item-description:not(#z):not(#z) { display: none !important; }
+
+/* ---------- Answer list: full width, stacked ---------- */
+*:has(> label input[type="radio"]):not(#z):not(#z),
+*:has(> [class*="option"] input[type="radio"]):not(#z):not(#z) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+/* ---------- Answers: white rounded pills ---------- */
+label:has(input[type="radio"]):not(#z):not(#z) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 13px 18px !important;
+  background: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease !important;
+}
+label:has(input[type="radio"]):not(#z):not(#z) *:not(input) {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  color: #05070d !important;
+  text-align: left !important;
+}
+label:has(input[type="radio"]):not(#z):not(#z):hover {
+  background: #eef2f7 !important;
+  border-color: #eef2f7 !important;
+}
+/* Selected answer: blue outline, bold text */
+label:has(input[type="radio"]:checked):not(#z):not(#z) {
+  background: #ffffff !important;
+  border-color: #00AEEF !important;
+  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.30) !important;
+}
+label:has(input[type="radio"]:checked):not(#z):not(#z) *:not(input) {
+  font-weight: 700 !important;
+}
+
+/* ---------- The radio button next to each answer ---------- */
+input[type="radio"]:not(#z):not(#z) {
+  display: inline-block !important;
+  position: static !important;
+  flex: 0 0 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  clip: auto !important;
+  pointer-events: auto !important;
+  accent-color: #00AEEF !important;
+  cursor: pointer !important;
+}
+
+/* ---------- Text inputs: white rounded ---------- */
+input[type="text"]:not(#z):not(#z),
+input[type="email"]:not(#z):not(#z),
+input[type="tel"]:not(#z):not(#z),
+textarea:not(#z):not(#z) {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #05070d !important;
+  background-color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 999px !important;
+  padding-top: 13px !important;
+  padding-bottom: 13px !important;
+  padding-right: 18px !important;
+  height: auto !important;
+  box-shadow: none !important;
+}
+input[type="text"]:not(#z):not(#z) { padding-left: 18px !important; }
+textarea:not(#z):not(#z) { border-radius: 20px !important; }
+input:not(#z):not(#z)::placeholder,
+textarea:not(#z):not(#z)::placeholder { color: #64748b !important; opacity: 1 !important; }
+input[type="text"]:not(#z):not(#z):focus,
+input[type="email"]:not(#z):not(#z):focus,
+input[type="tel"]:not(#z):not(#z):focus,
+textarea:not(#z):not(#z):focus {
+  outline: none !important;
+  border-color: #00AEEF !important;
+  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.30) !important;
+}
+
+/* ---------- Footer: Back + Next side by side ---------- */
+.ghl-footer.ghl-footer:not(#z) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  height: auto !important;
+  padding: 12px 0 0 !important;
+  margin: 0 auto !important;
+}
+.ghl-footer-buttons.ghl-footer-buttons:not(#z) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  height: auto !important;
+}
+.ghl-btn-placeholder.ghl-btn-placeholder:not(#z) { display: none !important; }
+
+.ghl-btn.ghl-footer-next:not(#z):not(#z),
+.ghl-btn.ghl-submit-btn:not(#z):not(#z),
+.ghl-btn.ghl-footer-back:not(#z):not(#z) {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 13px 20px !important;
+  font-size: 0 !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+.ghl-btn.ghl-footer-next:not(#z):not(#z),
+.ghl-btn.ghl-submit-btn:not(#z):not(#z) {
+  color: #ffffff !important;
+  background: #00AEEF !important;
+  border: 2px solid #00AEEF !important;
+  box-shadow: none !important;
+}
+.ghl-btn.ghl-footer-next:not(#z):not(#z):hover,
+.ghl-btn.ghl-submit-btn:not(#z):not(#z):hover {
+  background: #0096cf !important;
+  border-color: #0096cf !important;
+}
+.ghl-btn.ghl-footer-back:not(#z):not(#z) {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+.ghl-btn.ghl-footer-back:not(#z):not(#z):hover { border-color: #ffffff !important; }
+
+/* Hide GHL's own words + arrows, write "Back" / "Next" / "Submit" */
+.ghl-btn.ghl-footer-next:not(#z) span,
+.ghl-btn.ghl-footer-next:not(#z) svg,
+.ghl-btn.ghl-footer-back:not(#z) span,
+.ghl-btn.ghl-footer-back:not(#z) svg,
+.ghl-btn.ghl-submit-btn:not(#z) span,
+.ghl-btn.ghl-submit-btn:not(#z) svg { display: none !important; }
+.ghl-btn.ghl-footer-next:not(#z):not(#z)::before,
+.ghl-btn.ghl-submit-btn:not(#z):not(#z)::before,
+.ghl-btn.ghl-footer-back:not(#z):not(#z)::before {
+  font-family: "Inter", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+.ghl-btn.ghl-footer-next:not(#z):not(#z)::before { content: "Next" !important; }
+.ghl-btn.ghl-submit-btn:not(#z):not(#z)::before { content: "Submit" !important; }
+.ghl-btn.ghl-footer-back:not(#z):not(#z)::before { content: "Back" !important; }
+.ghl-btn.ghl-footer-next:not(#z)::after,
+.ghl-btn.ghl-submit-btn:not(#z)::after,
+.ghl-btn.ghl-footer-back:not(#z)::after { content: none !important; display: none !important; }
+
+/* ---------- Turnstile ---------- */
+.cf-turnstile, [class*="turnstile"] { margin: 8px 0 !important; max-width: 100% !important; }
+
+/* ---------- Hide GHL's mobile progress bar ---------- */
+.survey-progress-bar-mobile.survey-progress-bar-mobile,
+.survey-progress-fill-mobile.survey-progress-fill-mobile { display: none !important; }
