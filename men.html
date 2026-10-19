@@ -129,13 +129,26 @@
       </p>
 
       <div class="hero-video-card relative mx-auto max-w-3xl mb-10 rounded-2xl overflow-hidden ring-1 ring-[#38B6FF]/30 shadow-[0_20px_60px_-20px_rgba(56,182,255,0.4)]">
-        <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
-          <iframe src="https://www.loom.com/embed/3a9810ba43a5487786c3cb135f7eda79?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
-            title="Better Body Academy video"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen></iframe>
+        <div id="heroVideoWrap" role="button" tabindex="0" aria-label="Play video"
+          style="position:relative;width:100%;padding-top:56.25%;background:#000;cursor:pointer;">
+          <img src="hero-video-thumb.webp" alt="Better Body Academy video preview"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" />
         </div>
+      </div>
+      <script>
+        (function () {
+          var wrap = document.getElementById('heroVideoWrap');
+          if (!wrap) return;
+          function loadVideo() {
+            wrap.innerHTML = '<iframe src="https://www.loom.com/embed/3a9810ba43a5487786c3cb135f7eda79?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true&autoplay=1" title="Better Body Academy video" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+            wrap.style.cursor = 'default';
+          }
+          wrap.addEventListener('click', loadVideo, { once: true });
+          wrap.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadVideo(); }
+          }, { once: true });
+        })();
+      </script>
       </div>
 
       <div class="section-apply-cta">
