@@ -98,6 +98,18 @@
     allow="camera; microphone; autoplay; encrypted-media; fullscreen; payment"></iframe>
 
   <script>
+    // Forward ad/UTM params from this page's own URL onto the survey, so GHL
+    // can capture them via hidden fields (requires those hidden fields to be
+    // configured on the survey - see repo notes).
+    (function () {
+      var q = location.search.slice(1);
+      if (!q) return;
+      var frame = document.getElementById('bba-survey');
+      frame.src = 'https://api.leadconnectorhq.com/widget/survey/XgvZ0aGeazDlYTpp8CQB?' + q;
+    })();
+  </script>
+
+  <script>
     // Grow the survey iframe to fit each slide so it never scrolls inside.
     // The GHL survey posts its content height to the parent page (the same
     // messages form_embed.js listens for); read it and size the iframe to it.

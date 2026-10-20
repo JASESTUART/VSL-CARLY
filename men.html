@@ -516,6 +516,18 @@
     })();
   </script>
   <script src="men.js"></script>
+  <script>
+    // Forward ad/UTM params from this page's own URL onto every
+    // "BOOK YOUR CALL" link, so apply.html (and from there, the survey)
+    // can keep carrying them through to GHL.
+    (function () {
+      var q = location.search.slice(1);
+      if (!q) return;
+      document.querySelectorAll('a[href^="apply.html"]').forEach(function (a) {
+        a.href += (a.href.indexOf('?') > -1 ? '&' : '?') + q;
+      });
+    })();
+  </script>
   <script src="tracking.js?v=1"></script>
 </body>
 
