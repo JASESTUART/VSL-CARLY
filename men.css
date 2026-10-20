@@ -479,8 +479,8 @@ button { font-family: inherit; cursor: pointer; }
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
+  background: #38B6FF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
